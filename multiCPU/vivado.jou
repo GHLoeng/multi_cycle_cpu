@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jul 24 15:18:48 2018
+# Process ID: 11020
+# Current directory: G:/Vivado/multiCPU
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21876 G:\Vivado\multiCPU\multiCPU.xpr
+# Log file: G:/Vivado/multiCPU/vivado.log
+# Journal file: G:/Vivado/multiCPU\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project G:/Vivado/multiCPU/multiCPU.xpr
+update_compile_order -fileset sources_1
+update_files -from_files G:/Vivado/multiCPU/multiCPU.srcs/sources_1/new/CPU_top.v -to_files {{G:/Vivado/CPUsingle/CPU one cycle.srcs/sources_1/new/CPU_top.v}} -filesets [get_filesets *]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
+close_design
